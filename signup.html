@@ -2,21 +2,27 @@
 <html>
     <head>
         <title>SOBOTZ Sign up</title>
+        <link rel="stylesheet" href="style.css">
     </head>
-    <body style="background-color:lightcoral;">
-        <center>
-            <form action = "createaccount.php" method="get">
-                <h1>SOBOTZ</h1>
-                <label for="fname">Name (First and Last):</label>
-                <input type="text" id="fname" name="fname"><br><br>
-                <label for="lname">       Password:</label>
-                <input type="password" id="pword" name="pword"><br><br>
-                <label for="lname">Confirm Password:</label>
-                <input type="password" id="pword" name="pword"><br><br>
-                <a href = "file:///C:/Users/ikalotkin/OneDrive%20-%20South%20Orangetown%20Central%20School%20District/Computer%20Science%20A/htmltest/input.html">
-                <button>Submit</button> <br>
-                </a>
+    <body>
+        <div class ="wrapper">
+            <h1>Signup</h1>
+            <form>
+                <div>
+                    <input required type="text" name ="firstname" id="firstname-input" placeholder = "First name">
+                </div>
+                <div>
+                    <input required type="email" name ="email" id="email-input" placeholder = "Email">
+                </div>
+                <div>
+                    <input required type="password" name ="password" id="password-input" placeholder = "Password">
+                </div>
+                <div>
+                    <input required type="password" name ="repeat-password" id="repeat-password-input" placeholder = "Confirm Password">
+                </div>
+                <button type="submit">Signup</button>
             </form>
-        </center>
+            <p>Already have an Account? <a href ="signin.html">Click me, please, thank you.</a></p>
+        </div>
     </body>
 </html>
