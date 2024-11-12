@@ -1,0 +1,9 @@
+const form = document.getElementById('form')
+const firstname_input = document.getElementById('firstname-input')
+const email_input = document.getElementById('email-input')
+const password_input = document.getElementById('password-input')
+const repeat_password_input = document.getElementById('repeat_password-input')
+
+form.adddEventListener('submit', (e) =>{
+    //e.preventDefault()
+})
