@@ -9,21 +9,22 @@
 </head>
 <body>
     <body>
-        <center>
+        <div class="wrapper">
             <h1>SOBOTZ</h1>
-            <h4>Subteam</h4>
-            <select name="Subteam" id="Subteam">
-                <option value="Software">Software</option>
-                <option value="Build">Build</option>
-                <option value="Design">Design</option>
-                <option value="f/m">Finance/Marketing</option>
-              </select> <br> <br> <br>
-            <label for="taskInput">Task:</label>
-            <input type="text" id="taskInput" name="taskInput"><br><br>
-            <a href = "clockin.html">
-                <button>Enter</button> <br>
-            </a>
-        </center>
-
+            <h2>Subteam</h2>
+            <form id="form">
+                <select name="Subteam" id="Subteam">
+                    <option value="Software">Software</option>
+                    <option value="Build">Build</option>
+                    <option value="Design">Design</option>
+                    <option value="f/m">Finance/Marketing</option>
+                 </select>
+                <h2>Task:</h2>
+                <input type="text" name="task" id="task-input" placeholder="Assignment">
+                <a href = "clockin.html">
+                    <button>Enter</button>
+                </a>
+            </form>
+        </div>
     </body>
 </html>
