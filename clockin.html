@@ -3,18 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clock in</title>
+  <title>Clock In</title>
   <link rel="stylesheet" href="style.css">
   <script type="text/javascript" src="validation.js" defer></script>
 </head>
 <body>
-    <body>
-        <center>
-            <h1>Clock in</h1>
-            <a href = "thankyou.html">
-                <button>Submit</button> <br>
-            </a>
-        </center>
+    <div id="you-qr-result"></div>
+    <h1>Scan QR Code</h1>
+    <div style="display: flex; justify-content: center;">
+        <div id="my-qr-reader" style="width:500px;"></div>
+    </div>
 
-    </body>
+    <!-- Load HTML5 QR Code Library -->
+    <script src="https://unpkg.com/html5-qrcode"></script>
+
+    <script>
+        // Check if DOM is ready
+        function domReady(fn) {
+            if (document.readyState === "complete" || document.readyState === "interactive") {
+                setTimeout(fn, 1); // Delay by 1ms to ensure DOM is fully ready
+            } else {
+                document.addEventListener("DOMContentLoaded", fn);
+            }
+        }
+
+        domReady(function () {
+            const myqr = document.getElementById('you-qr-result');
+            let lastResult, countResults = 0;
+
+            // Handle QR code scan success
+            function onScanSuccess(decodedText, decodedResult) {
+                if (decodedText !== lastResult) {
+                    ++countResults;
+                    lastResult = decodedText;
+
+                    // Show an alert with the scanned QR code
+                    alert("Your QR code is: " + decodedText);
+
+                    // Update the display with scan results
+                    myqr.innerHTML = `You scanned ${countResults} time(s): ${decodedText}`;
+                }
+            }
+
+            // Initialize the QR code scanner
+            const htmlscanner = new Html5QrcodeScanner(
+                "my-qr-reader", 
+                { fps: 10, qrbox: 250 }
+            );
+            htmlscanner.render(onScanSuccess);
+        });
+    </script>
+</body>
 </html>
